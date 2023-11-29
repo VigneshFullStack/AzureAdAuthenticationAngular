@@ -33,7 +33,9 @@ export class ReportComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         if(error.status == 401 || error.status == 403){
-          this.snackBar.open("You are UnAuthorized!")
+          this.snackBar.open("You are UnAuthorized!", 'Close', {
+            duration: 2000, // 2 seconds
+          });
         }
       }
     )
