@@ -1,0 +1,16 @@
+.list-item-title {
+    display: inline-block;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.list-item-content {
+    display: inline-block;
+    padding: 5px;
+}
+
+:host ::ng-deep .p-progress-spinner {
+    width: 100% !important;
+    margin-top: 20vh !important;
+    overflow: hidden !important;
+}

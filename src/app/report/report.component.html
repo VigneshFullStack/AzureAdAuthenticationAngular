@@ -1,0 +1,23 @@
+
+<div style="margin: auto;width:80%;height:90%;margin-top: 20px;">
+    <div style="margin: 0 auto;width:90%;text-align:center">
+        <button mat-raised-button color="primary" (click)="getReport()" style="margin-right: 20px;">Show Report</button>
+        <button mat-raised-button color="primary" (click)="getReportStatus()">Show Report Status</button>
+    </div>
+
+    <div style="margin: 0 auto;width:90%;text-align:center;margin-top: 20px;">{{reportStatus}}</div>
+
+    <div *ngIf="pdfUrl">
+        <mat-card *ngIf="!loading">
+            <mat-card-content>
+                <object [data]="pdfUrl" type="application/pdf" style="min-height: 100vh;width: 100%;">
+                </object>
+            </mat-card-content>
+        </mat-card>
+
+        <div *ngIf="loading" class="card">
+            <!-- <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar> -->
+            <p-progressSpinner></p-progressSpinner>
+        </div>
+    </div>
+</div>

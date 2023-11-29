@@ -1,0 +1,10 @@
+<mat-toolbar class="mat-elevation-z4" color="primary">
+  <a href="/" class="title">Euroland</a>
+  <div class="toolbar-spacer"></div>
+  <a mat-button [routerLink]="['profile']" style="margin-right: 10px;">Profile</a>
+  <a mat-button [routerLink]="['reports']" style="margin-right: 10px;">Reports</a>
+  <button mat-raised-button *ngIf="!isUserLoggedIn" (click)="login()">Login</button>
+  <button mat-raised-button *ngIf="isUserLoggedIn" (click)="logout()">Logout</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

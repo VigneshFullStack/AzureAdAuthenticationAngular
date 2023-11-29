@@ -1,0 +1,55 @@
+<div *ngIf="loading" class="card">
+    <!-- <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar> -->
+    <p-progressSpinner></p-progressSpinner>
+</div>
+
+<div *ngIf="!loading" style="margin: auto;width: 60%;">
+    <mat-card style="margin-top: 30px;">
+        <mat-card-title style="text-align: center;">
+            User Information
+        </mat-card-title>
+        <mat-card-content style="display: flex;justify-content:center;align-items:center">
+            <div style="width: 100%;">
+                <mat-list style="max-width: 50vw;">
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">User Name: </div>
+                        <div class="list-item-content">{{profile?.userPrincipalName}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">First Name: </div>
+                        <div class="list-item-content">{{profile?.givenName}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">Last Name: </div>
+                        <div class="list-item-content">{{profile?.surname}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">Job Title: </div>
+                        <div class="list-item-content">{{profile?.jobTitle}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">Phone Number: </div>
+                        <div class="list-item-content">{{profile?.mobilePhone}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <div class="list-item-title">Email: </div>
+                        <div class="list-item-content">{{profile?.mail}}</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div>
+                <mat-card>
+                    <mat-card-content>
+                        <img [src]="profilePic" alt="profile pic" height="250px" width="250px" />
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
